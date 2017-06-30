@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Add New Directory</div>
+        <div class="panel-body">
+            <form class="form" method="post" ng-submit="addNewDir()" name="addForm">
+                <div class="form-group" ng-class="{ 'has-success' : addForm.dirName.$valid && addForm.dirName.$dirty, 'has-error' : addForm.dirName.$invalid && addForm.dirName.$dirty }">
+                    <input class="form-control" type="text" name="dirName" ng-model="dirName" placeholder="Enter Directory name" required autofocus>
+                    <div class="help-block text-danger" ng-if="addForm.dirName.$dirty" ng-messages="addForm.dirName.$error">
+                        <div ng-message="required">Directory name is required.</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit" ng-disabled="addForm.$invalid">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
